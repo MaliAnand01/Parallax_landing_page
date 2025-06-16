@@ -27,6 +27,6 @@ Welcome to the Traverse Landing Page! This project is a sleek and modern web exp
 Explore the live project here: [https://traverseparallax.netlify.app/](https://traverseparallax.netlify.app/)
 
 
-![Screenshot of Traverse Landing Page](images/screenshot.png)
+![Screenshot of Traverse Landing Page](src/images/screenshot.png)
 
 ---
