@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Traverse Landing Page</title>
+    <link
+      rel="shortcut icon"
+      href="../images/logo_mark.png"
+      type="image/x-icon"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-bkg text-white text-base selection:bg-accent selection:text-bkg overflow-hidden"
+  >
+    <div
+      class="h-screen pb-12 sm:pb-0 overflow-y-auto overflow-x-hidden relative scroll-smooth perspective"
+    >
+      <nav
+        class="grid place-items-center absolute w-full z-50 drop-shadow-text-sm"
+        aria-label="Primary Navigation"
+      >
+        <a
+          href="/"
+          aria-label="Go Home"
+          class="p-1 m-4 focus:outline-none focus-visible:ring-4 ring-accent rounded-full transition-shadow"
+          ><img src="../images/logo.svg" class="w-32 sm:w-48 lg:w-56"
+        /></a>
+      </nav>
+
+      <header
+        class="min-h-screen flex flex-col justify-evenly items-center relative preserve-3d"
+      >
+        <div
+          class="absolute bg-gradient-to-b inset-0 bottom-3/4 from-accent to-transparent"
+        ></div>
+        <div
+          class="absolute bg-gradient-to-t inset-0 top-1/3 -bottom-32 from-bkg/80 to-transparent distance-1 -z-10"
+        ></div>
+        <img
+          sizes="(min-width: 500px) 480w, 650w, 800w, 1300w"
+          srcset="
+            ../images/hero_mobile.png  480w,
+            ../images/hero-sm.jpg      650w,
+            ../images/hero-md.jpg      800w,
+            ../images/hero-lg.jpg     1300w
+          "
+          class="absolute h-full w-full -z-20 object-cover object-center distance-1"
+          src="../images/hero.png"
+          aria-hidden="true"
+        />
+        <h1
+          class="text-5xl text-center font-bold text-white tracking-wide py-12 drop-shadow-text-sm lg:drop-shadow-text-lg distance-2"
+        >
+          Unique Trips for <br />
+          Adventurous <br />
+          Travelers
+        </h1>
+        <a
+          href="#contact-form"
+          class="bg-accent text-bkg font-medium py-3 px-8 rounded-full border border-bkg focus:outline-none focus-visible:ring-4 ring-accent ring-offset-bkg ring-offset-2 hover:bg-accent/90 flex gap-2 drop-shadow-text-lg hover:drop-shadow-none transition-shadow items-center distance-2"
+        >
+          <span class="uppercase tracking-wide">Book a Trip</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M231.38,46.54a12,12,0,0,0-10.29-2.18L161.4,59.28l-60-30a12,12,0,0,0-8.28-.91l-64,16A12,12,0,0,0,20,56V200a12,12,0,0,0,14.91,11.64L94.6,196.72l60,30a12,12,0,0,0,8.28.91l64-16A12,12,0,0,0,236,200V56A12,12,0,0,0,231.38,46.54ZM108,59.42l40,20V196.58l-40-20Zm-64,6,40-10V174.63l-40,10ZM212,190.63l-40,10V81.37l40-10Z"
+            ></path>
+          </svg>
+        </a>
+      </header>
+
+      <main
+        class="relative mt-16 sm:mt-24 lg:mt-40 pb-16 -mb-16 grid gap-16 sm:gap-24 lg:gap-40 overflow-hidden"
+      >
+        <section
+          aria-labelledby="headline"
+          class="container p-sm grid gap-4 text-center max-w-prose fade-up"
+        >
+          <div>
+            <small
+              class="tracking-wide text-accent uppercase drop-shadow-text-sm"
+              >What Dreams Are Made Of</small
+            >
+            <h2 id="headline" class="text-3xl font-bold drop-shadow-text-md">
+              Trips for Explorers
+            </h2>
+          </div>
+          <p class="text-muted drop-shadow-text-sm">
+            We find once-in-a-lifetime locations and reserve them for travelers
+            full of adventure. Calling all explorers and extremists to the trip
+            of their dreams in the most exotic locations all around the globe.
+          </p>
+        </section>
+
+        <section
+          aria-labelledby="slider"
+          class="px-sm sm:px-2xl grid gap-4 text-center sm:text-left fade-up"
+        >
+          <div class="relative">
+            <div
+              class="hidden sm:block absolute w-8 bg-accent/10 -left-4 h-full"
+            ></div>
+            <div>
+              <small
+                class="tracking-wide text-accent uppercase drop-shadow-text-sm"
+              >
+                Off The Beaten Path</small
+              >
+              <h2 id="slider" class="text-3xl font-bold drop-shadow-text-md">
+                Places without People
+              </h2>
+            </div>
+            <div
+              class="flex flex-wrap sm:flex-nowrap justify-center sm:justify-between items-center space-x-4"
+            >
+              <p class="text-muted max-w-[42rem] drop-shadow-text-sm mb-4">
+                We specialize in finding places no one else knows about. Here
+                are a few of our favorite spots for true adventurers.
+              </p>
+
+              <div class="flex gap-4">
+                <button
+                  data-slideBtn
+                  id="prev"
+                  aria-label="show previous image"
+                  class="grid place-items-center bg-accent hover:bg-accent/90 rounded-full p-2 text-bkg focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg ring-accent disabled:bg-accent/20 disabled:text-accent"
+                  disabled
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="36"
+                    height="36"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="pointer-events-none"
+                  >
+                    <path
+                      d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212Zm52-84a12,12,0,0,1-12,12H117l11.52,11.51a12,12,0,0,1-17,17l-32-32a12,12,0,0,1,0-17l32-32a12,12,0,0,1,17,17L117,116h51A12,12,0,0,1,180,128Z"
+                    ></path>
+                  </svg>
+                </button>
+                <button
+                  data-slideBtn
+                  id="next"
+                  aria-label="show next image"
+                  class="grid place-items-center bg-accent hover:bg-accent/90 rounded-full p-2 text-bkg focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg ring-accent disabled:bg-accent/20 disabled:text-accent"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="36"
+                    height="36"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212Zm48.49-92.49a12,12,0,0,1,0,17l-32,32a12,12,0,1,1-17-17L139,140H88a12,12,0,0,1,0-24h51l-11.52-11.51a12,12,0,1,1,17-17Z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div
+          class="-mt-10 sm:-mt-20 lg:-mt-36 container sm:px-2xl xs:w-screen fade-up"
+        >
+          <div
+            class="flex transition-transform duration-500"
+            data-slideContainer
+          >
+            <!-- Photots -->
+            <div
+              class="relative w-full xs:w-auto flex-grow flex-shrink-0 xs:basis-96 pr-4"
+              data-slide
+            >
+              <img
+                class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
+                src="../images/Image05.png"
+                alt="Iceland Scene"
+              />
+              <p
+                class="absolute bottom-4 left-4 py-2 bg-bkg px-4 font-bold pointer-events-none text-lg tracking-wide [@media(hover:hover)]:opacity-0 peer-hover:opacity-100 transition-opacity"
+              >
+                Ocean Wonders
+              </p>
+            </div>
+
+            <div
+              class="relative w-full xs:w-auto flex-grow flex-shrink-0 xs:basis-96 pr-4"
+              data-slide
+            >
+              <img
+                class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
+                src="../images/Image04.png"
+                alt="Iceland Scene"
+              />
+              <p
+                class="absolute bottom-4 left-4 py-2 bg-bkg px-4 font-bold pointer-events-none text-lg tracking-wide [@media(hover:hover)]:opacity-0 peer-hover:opacity-100 transition-opacity"
+              >
+                Waterfall Cave
+              </p>
+            </div>
+
+            <div
+              class="relative w-full xs:w-auto flex-grow flex-shrink-0 xs:basis-96 pr-4"
+              data-slide
+            >
+              <img
+                class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
+                src="../images/Image07.png"
+                alt="Iceland Scene"
+              />
+              <p
+                class="absolute bottom-4 left-4 py-2 bg-bkg px-4 font-bold pointer-events-none text-lg tracking-wide [@media(hover:hover)]:opacity-0 peer-hover:opacity-100 transition-opacity"
+              >
+                Rainbow Falls
+              </p>
+            </div>
+
+            <div
+              class="relative w-full xs:w-auto flex-grow flex-shrink-0 xs:basis-96 pr-4"
+              data-slide
+            >
+              <img
+                class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
+                src="../images/Image06.png"
+                alt="Iceland Scene"
+              />
+              <p
+                class="absolute bottom-4 left-4 py-2 bg-bkg px-4 font-bold pointer-events-none text-lg tracking-wide [@media(hover:hover)]:opacity-0 peer-hover:opacity-100 transition-opacity"
+              >
+                Canyon Peaks
+              </p>
+            </div>
+
+            <div
+              class="relative w-full xs:w-auto flex-grow flex-shrink-0 xs:basis-96 pr-4"
+              data-slide
+            >
+              <img
+                class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
+                src="../images/Image08.png"
+                alt="Iceland Scene"
+              />
+              <p
+                class="absolute bottom-4 left-4 py-2 bg-bkg px-4 font-bold pointer-events-none text-lg tracking-wide [@media(hover:hover)]:opacity-0 peer-hover:opacity-100 transition-opacity"
+              >
+                Mountain Inlet
+              </p>
+            </div>
+
+            <div
+              class="relative w-full xs:w-auto flex-grow flex-shrink-0 xs:basis-96 pr-4"
+              data-slide
+            >
+              <img
+                class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
+                src="../images/Image03.png"
+                alt="Iceland Scene"
+              />
+              <p
+                class="absolute bottom-4 left-4 py-2 bg-bkg px-4 font-bold pointer-events-none text-lg tracking-wide [@media(hover:hover)]:opacity-0 peer-hover:opacity-100 transition-opacity"
+              >
+                Angel Cliffs
+              </p>
+            </div>
+
+            <div
+              class="relative w-full xs:w-auto flex-grow flex-shrink-0 xs:basis-96 pr-4"
+              data-slide
+            >
+              <img
+                class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
+                src="../images/Image01.png"
+                alt="Iceland Scene"
+              />
+              <p
+                class="absolute bottom-4 left-4 py-2 bg-bkg px-4 font-bold pointer-events-none text-lg tracking-wide [@media(hover:hover)]:opacity-0 peer-hover:opacity-100 transition-opacity"
+              >
+                Aurora Sound
+              </p>
+            </div>
+
+            <div
+              class="relative w-full xs:w-auto flex-grow flex-shrink-0 xs:basis-96"
+              data-slide
+            >
+              <img
+                class="object-cover h-full [@media(hover:hover)]:grayscale hover:grayscale-0 transition-all peer"
+                src="../images/Image02.png"
+                alt="Iceland Scene"
+              />
+              <p
+                class="absolute bottom-4 left-4 py-2 bg-bkg font-bold px-4 pointer-events-none text-lg tracking-wide [@media(hover:hover)]:opacity-0 peer-hover:opacity-100 transition-opacity"
+              >
+                Icy Meadows
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map section -->
+        <section
+          aria-labelledby="map"
+          class="container flex flex-wrap md:space-x-16 space-y-12 md:space-y-0 justify-between items-center"
+        >
+          <img
+            src="../images/map.png"
+            alt="Map"
+            width="400"
+            class="grow md:flex-1 fade-up"
+            loading="lazy"
+          />
+          <div
+            class="grid gap-4 text-center md:text-left grow md:flex-1 fade-up"
+          >
+            <div class="relative">
+              <div
+                class="hidden md:block absolute w-8 bg-accent/10 -left-4 h-full"
+              ></div>
+              <small class="text-accent tracking-widest text-center uppercase"
+                >A globe of possibilities</small
+              >
+              <h2 id="map" class="text-3xl font-bold tracking-wide">
+                Happy Travelers <br />
+                the World Over
+              </h2>
+            </div>
+            <p class="text-muted max-w-[42rem]">
+              Don’t take our word for it! Thousands of adventurous travelers
+              have enjoyed more than 250 exotic locations all over the globe!
+            </p>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section
+          aria-labelledby="cta"
+          class="container grid gap-4 text-center max-w-prose fade-up"
+        >
+          <div>
+            <small class="text-accent tracking-widest text-center uppercase"
+              >It’s Time to Explore</small
+            >
+            <h2 id="cta" class="text-3xl font-bold tracking-wide">
+              Get Hidden Locations
+            </h2>
+          </div>
+          <p class="text-muted max-w-[42rem] mx-auto">
+            Not sure where to start? Drop us a line, and we’ll send you new
+            locations before they’re shown on our website.
+          </p>
+          <form
+            id="contact-form"
+            class="border-4 border-accent rounded-full p-1 flex items-center justify-between max-w-md mx-auto"
+          >
+            <input
+              type="email"
+              id="email"
+              required
+              placeholder="Email Address"
+              class="p-2 mx-4 bg-transparent w-full text-sm flex-1 border-b-2 border-transparent rounded-none caret-accent placeholder:text-white focus:placeholder:text-muted focus:outline-none focus:border-accent"
+            />
+            <label class="sr-only" for="email">Enter your email address</label>
+            <button
+              class="bg-accent text-bkg font-medium text-sm py-3 px-4 sm:px-8 rounded-full border border-bkg focus:outline-none focus-visible:ring-4 ring-accent ring-offset-bkg ring-offset-2 hover:bg-accent/90 flex space-x-2 shrink-0"
+              id="contact-btn"
+            >
+              <span class="uppercase tracking-wide">Sign Up</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                class="pointer-events-none"
+                fill="currentColor"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M230.14,25.86a20,20,0,0,0-19.57-5.11l-.22.07L18.44,79a20,20,0,0,0-3.06,37.25L99,157l40.71,83.65a19.81,19.81,0,0,0,18,11.38c.57,0,1.15,0,1.73-.07A19.82,19.82,0,0,0,177,237.56L235.18,45.65a1.42,1.42,0,0,0,.07-.22A20,20,0,0,0,230.14,25.86ZM156.91,221.07l-34.37-70.64,46-45.95a12,12,0,0,0-17-17l-46,46L34.93,99.09,210,46Z"
+                ></path>
+              </svg>
+            </button>
+          </form>
+        </section>
+      </main>
+
+      <footer
+        class="border-t border-accent mt-16 sm:mt-24 lg:mt-40 md:px-12 py-6 sm:py-8 md:py-12"
+      >
+        <div
+          class="container flex flex-wrap md:justify-between items-center md:items-start gap-12"
+        >
+          <div
+            class="grid gap-2 grow justify-items-center md:justify-items-start basis-full md:basis-1/4"
+          >
+            <img
+              class="w-32 sm:w-48 lg:w-56"
+              src="../images/logo-color.svg"
+              alt="Traverse Logo"
+            />
+            <p class="text-muted text-sm text-center md:text-left">
+              We curate unique experiences <br />for the adventurous traveler.
+            </p>
+          </div>
+          <nav
+            aria-label="secondary navigation"
+            class="text-sm flex flex-col items-center sm:items-start sm:flex-row text-center sm:text-left gap-6 justify-between md:justify-around grow basis-full md:basis-1/2 mt-2"
+          >
+            <div class="grid gap3">
+              <p
+                class="font-bold underline decoration-accent decoration-4 mb-1 underline-offset-2 tracking-wide px-4"
+              >
+                About
+              </p>
+              <ul aria-label="About Traverse">
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-accent transition-colors focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg px-4 ring-accent rounded-full"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-accent transition-colors focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg px-4 ring-accent rounded-full"
+                    >Press</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-accent transition-colors focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg px-4 ring-accent rounded-full"
+                    >News</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="grid gap3">
+              <p
+                class="font-bold underline decoration-accent decoration-4 mb-1 underline-offset-2 tracking-wide px-4"
+              >
+                Locations
+              </p>
+              <ul aria-label="Locations">
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-accent transition-colors focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg px-4 ring-accent rounded-full"
+                    >Africa</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-accent transition-colors focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg px-4 ring-accent rounded-full"
+                    >Asia</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-accent transition-colors focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg px-4 ring-accent rounded-full"
+                    >Australia</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-accent transition-colors focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg px-4 ring-accent rounded-full"
+                    >Europe</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-accent transition-colors focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg px-4 ring-accent rounded-full"
+                    >North America</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-accent transition-colors focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg px-4 ring-accent rounded-full"
+                    >South America</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="grid gap3">
+              <p
+                class="font-bold underline decoration-accent decoration-4 mb-1 underline-offset-2 tracking-wide px-4"
+              >
+                Contact Us
+              </p>
+              <ul aria-label="Contact Traverse">
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-accent transition-colors focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg px-4 ring-accent rounded-full"
+                    >Email</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-accent transition-colors focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg px-4 ring-accent rounded-full"
+                    >Instagram</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-accent transition-colors focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg px-4 ring-accent rounded-full"
+                    >Facebook</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-accent transition-colors focus:outline-none focus-visible:ring-4 ring-offset-2 ring-offset-bkg px-4 ring-accent rounded-full"
+                    >Twitter</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </footer>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
